@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: codex-frontend
+spec:
+  type: {{ .Values.service.frontend.type }}
+  ports:
+    - port: {{ .Values.service.frontend.port }}
+      targetPort: 3000
+  selector:
+    app: codex-frontend

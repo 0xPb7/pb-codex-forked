@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codex-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codex-backend
+  template:
+    metadata:
+      labels:
+        app: codex-backend
+    spec:
+      imagePullSecrets:
+        {{- if .Values.imagePullSecrets }}
+        {{- range .Values.imagePullSecrets }}
+        - name: {{ .name }}
+        {{- end }}
+        {{- end }}
+      containers:
+        - name: codex-backend
+          image: {{ .Values.image.codexBackend }}
+          ports:
+            - containerPort: 4000
+          envFrom:
+            - secretRef:
+                name: codex-all-secrets
+      serviceAccount: {{ .Values.serviceAccount.name }}

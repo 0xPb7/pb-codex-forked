@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  codex-helm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-07-03T23:39:20.899551+05:30"
+    description: A Helm chart for deploying codex application
+    digest: 19a5d95da0e0aca37681525026deb5441ba3e2db75e3a6a56bdd2dab20b23b36
+    icon: https://artifacthub.io/image/d9af69e0-4dd9-4f44-aec5-43684b389518@2x
+    name: codex-helm
+    type: application
+    urls:
+    - codex-helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-07-03T23:39:20.895112+05:30"
